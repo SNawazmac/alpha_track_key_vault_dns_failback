@@ -40,5 +40,5 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |
-         ./key_vault_dns_failback.ps1 -primary_subscription_Id "${{vars.PRIVATE_DNS_ZONE_SUBSCRIPTION_ID}}" -private_dns_zone_resource_group_name "${{vars.PRIVATE_DNS_ZONE_RESOURCE_GROUP_NAME}}" -key_vault_private_dns_zone_name "${{vars.KEY_VAULT_PRIVATE_DNS_ZONE_NAME}}" -key_vault_private_dns_zone_record_name "${{vars.KEY_VAULT_1_PRIVATE_DNS_ZONE_RECORD_NAME}}" -key_vault_primary_private_endpoint_IP "${{vars.KEY_VAULT_1_PRIMARY_PRIVATE_ENDPOINT_IP}}" -key_vault_secondary_private_endpoint_IP "${{vars.KEY_VAULT_1_SECONDARY_PRIVATE_ENDPOINT_IP}}"
+         ./key_vault_dns_failback.ps1 -primary_subscription_Id "${{inputs.primary_subscription_Id}}" -private_dns_zone_resource_group_name "${{inputs.private_dns_zone_resource_group_name}}" -key_vault_private_dns_zone_name "${{inputs.key_vault_private_dns_zone_name}}" -key_vault_private_dns_zone_record_name "${{inputs.key_vault_private_dns_zone_record_name}}" -key_vault_primary_private_endpoint_IP "${{inputs.key_vault_primary_private_endpoint_IP}}" -key_vault_secondary_private_endpoint_IP "${{inputs.key_vault_secondary_private_endpoint_IP}}"
         azPSVersion: "latest"
